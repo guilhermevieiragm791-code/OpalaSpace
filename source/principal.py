@@ -1,18 +1,41 @@
 import pygame
+import sys
 
-try:
-    # inicializa o jogo
-    pygame.init()
-    except:
-        #encerra o jogo
-        pygame.quit()
-#largura e altura da janela
+
+# Inicializa o pygame
+pygame.init()
+
+
+# largura e altura da janela
 largura = 1280
 altura = 720
 
-#configura a janela e o texto do jogo
-screen = pygame.display.set_mode((largura,altura))
+
+# configura a janela
+screen = pygame.display.set_mode((largura, altura))
+
+
+# título da janela
 pygame.display.set_caption('Jogo Opala Space')
 
 
-pygame.display.update()
+# loop principal do jogo
+while True:
+
+
+   # captura eventos
+   for event in pygame.event.get():
+
+
+       # evento de fechar a janela
+       if event.type == pygame.QUIT:
+           pygame.quit()
+           sys.exit()
+
+
+   # cor de fundo da janela (preto)
+   screen.fill((0, 0, 0))
+
+
+   # atualiza a tela
+   pygame.display.update()
